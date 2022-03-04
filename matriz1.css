@@ -1,0 +1,379 @@
+body {
+    font-family: JosefinSans;
+    font-size: 18px;
+    background-color: rgb(253, 198, 131);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h2 {
+    margin: 15px auto;
+}
+
+.fontBold {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#divContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 700px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#divTitulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: skewY(-4deg);
+    background-color: blueviolet;
+    width: 550px;
+    height: 70px;
+    text-align: center;
+    margin: 50px auto 0 auto;
+    font-family: JosefinSans;
+    color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#divMontarMatriz {
+    background-color: white;
+    width: 450px;
+    font-weight: bold;
+}
+
+#h1Titulo {
+    transform: skewY(4deg);
+}
+
+#divDescricao {
+    background-color: rgb(255, 243, 210);
+    margin-top: 30px;
+    padding: 10px;
+    font-family: JosefinSans;
+    font-size: 18px;
+    font-weight: bold;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#divMatrizALinhas {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    height: 30px;
+}
+
+#divButtonCriarMatrizes {
+    margin-top: 25px;
+}
+
+h2 {
+    text-align: center;
+    color: blueviolet;
+}
+
+#divConteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+#selecao {
+    width: 100px;
+}
+
+#inputNumeroDeLinhas, #inputNumeroDeColunas {
+    width: 50px;
+}
+
+#inputsMatriz {
+    display: flex;
+    flex-direction: column;
+}
+
+#divPerguntas {
+    display: flex;
+    background-color: #FFFFFF;
+}
+
+.divLinhasEColunasMatrizes {
+    display: flex;
+    flex-direction: column;
+    height: 210px;
+    align-items: flex-start;
+}
+
+#divTextLinhasMatrizA, #divTextLinhasMatrizB {
+    display: flex;
+    align-items: flex-end;
+    width: 318px;
+    height: 27px;
+}
+
+#divLinhasMatrizA, #divLinhasMatrizB {
+    display: flex;
+    flex-direction: row;
+}
+
+
+#divTextColunasMatrizA, #divTextColunasMatrizB {
+    display: flex;
+    align-items: flex-end;
+    width: 330px;
+    height: 27px;
+}
+
+#divInputLinhasMatrizA, #divInputLinhasMatrizB {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 110px;
+}
+
+#divInputLinhasMatrizB {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 110px;
+}
+
+#divColunasMatrizA, #divColunasMatrizB {
+    display: flex;
+}
+
+#divMatrizes {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+}
+
+#matriz1 {
+    background-color: white;
+    text-align: center;
+}
+
+#matriz2 {
+    background-color: white;
+    margin-left: 30px;
+    text-align: center;
+}
+
+.numeroMatriz, .numeroMatriz2 {
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    margin: 0 3px 3px 0;
+}
+
+#operacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+
+.buttonsOperacoes {
+    margin: 0 5px 0 0
+}
+
+#saidaDeDados {
+    width: 400px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+#buttonCriarMatrizes {
+    width: 200px;
+    height: 30px;
+    margin: 10px 0 5px 0;
+    background-color: white;
+    border-color: #CCCCCC;
+    border-style: solid;
+    font-family: JosefinSans;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+}
+
+#buttonSomar1, #buttonSomar2, #buttonSomar3, #buttonSomar4, #buttonSubtrair1, #buttonSubtrair2, #buttonSubtrair3, #buttonSubtrair4 {
+    width: 25px;
+    height: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 3px;
+    margin-right: 0;
+}
+
+#divButtonLimpar {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 5px;
+}
+
+#inputNumeroDeLinhas1, #inputNumeroDeLinhas2, #inputNumeroDeColunas1, #inputNumeroDeColunas2 {
+    width: 40px;
+    font-size: 18px;
+    font-family: JosefinSans;
+    margin-left: 10px;
+    height: 20px;
+    color: white;
+}
+
+#buttonSomar, #buttonSubtrair, #buttonMultiplicar, #buttonLimpar {
+    width: 100px;
+    height: 30px;
+    font-family: JosefinSans;
+    font-size: 17px;
+    font-weight: 600;
+    background-color: bisque;
+    border-color: blanchedalmond;
+}
+
+#buttonLimpar {
+    margin-top: 10px;
+}
+
+#buttonLimparMatrizes {
+    width: 150px;
+    display: none;
+}
+
+@font-face {
+    font-family: JosefinSans;
+    src: url(josefin.ttf);
+}
+
+.pDescricao {
+    margin: 0px 0 10px;
+    text-align: center;
+}
+
+.pOperacoes {
+    margin: 0;
+    text-align: center;
+}
+
+#divButton {
+    width: 600px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+#divButtons {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    background-color: #FFFFFF;
+    margin-bottom: 0;
+}
+
+.inputSaidaDaMatriz {
+    margin: 5px 5px 5px 5px;
+}
+
+.inputSaidaDados {
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    margin: 2px 2px 2px 2px;
+}
+
+footer {
+    margin: 50px;
+    background-color: blanchedalmond;
+    width: 500px;
+}
+
+@media (max-width: 600px) {
+    #divTitulo {
+        width: 350px;
+    }
+    #divContainer {
+        width: 400px;
+    }
+
+    #divConteudo {
+        width: 400px;
+    }
+
+    #divMontarMatriz {
+        height: 300px;
+        width: 400px;
+    }
+
+    #divLinhasMatrizA, #divLinhasMatrizB, #divColunasMatrizA, #divColunasMatrizB {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #divTextLinhasMatrizA, #divTextLinhasMatrizB, #divInputLinhasMatrizA, #divInputLinhasMatrizB {
+        display: flex;
+        width: 400px;
+        height: 27px;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+    }
+
+
+    #divMatrizes {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #matriz1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    
+    #matriz2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    #divButton {
+        width: 400px;
+    }
+    #divButtons {
+        width: 400px;
+    }
+
+    footer {
+        width: 400px;
+        text-align: center;
+    }
+    
+}

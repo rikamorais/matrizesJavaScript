@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrizes</title>
+    <link rel="stylesheet" href="matriz1.css">
+</head>
+<body>
+    <div id="divContainer">
+        <div id="divCenter">
+            <div id="divTitulo">
+                <h1 id="h1Titulo">
+                    Matrizes
+                </h1>
+            </div>
+            <div id="divConteudo">
+                <div id="divDescricao">
+                    <p class="pDescricao">
+                        Faça operações matemáticas com matrizes.
+                    </p>
+                    <p class="pOperacoes">
+                        Adição, subtração e multiplicação.
+                    </p>
+                </div>
+                <div id="divMontarMatriz">
+
+<!-- ----------------------- MATRIZ A -------------------------------->
+                    <div class="divLinhasEColunasMatrizes">
+                        <h2>
+                            Matriz A
+                        </h2>
+                        <div id="divLinhasMatrizA">
+                            <div id="divTextLinhasMatrizA">
+                                Digite o número de linhas da matriz A:
+                            </div>
+                            <div >
+                                <div id="divInputLinhasMatrizA">
+                                    <input type="text" id="inputNumeroDeLinhas1" onkeypress="return somenteNumeros (event)" value="0" onfocus=" this.value=''">
+                                    <button id = 'buttonSubtrair1'>-</button>
+                                    <button id="buttonSomar1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="divColunasMatrizA">
+                            <div id="divTextColunasMatrizA">
+                                Digite o número de colunas da matriz A:
+                            </div>
+                            <div id="divInputLinhasMatrizA">
+                                <input type="text" id="inputNumeroDeColunas1" onkeypress="return somenteNumeros (event)" value="0" onfocus="this.value=''">
+                                <button id="buttonSubtrair2">-</button>
+                                <button id="buttonSomar2">+</button>
+                            </div>
+                        </div>
+<!-- ----------------------- MATRIZ B -------------------------------->
+                        <h2>
+                            Matriz B
+                        </h2>
+                        <div id="divLinhasMatrizB">
+                            <div id="divTextLinhasMatrizB">
+                                Digite o número de linhas da matriz B:
+                            </div>
+                            <div >
+                                <div id="divInputLinhasMatrizB">
+                                    <input type="text" id="inputNumeroDeLinhas2" onkeypress="return somenteNumeros (event)" value="0" onfocus="this.value=''">
+                                    <button id="buttonSubtrair3">-</button>
+                                    <button id="buttonSomar3">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="divColunasMatrizB">
+                            <div id="divTextColunasMatrizB">
+                                Digite o número de colunas da matriz B:
+                            </div>
+                            <div id="divInputLinhasMatrizB">
+                                <input type="text" id="inputNumeroDeColunas2" onkeypress="return somenteNumeros (event)" value="0" onfocus="this.value=''">
+                                <button id="buttonSubtrair4">-</button>
+                                <button id="buttonSomar4">+</button>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+                <div id="divButtonCriarMatrizes">
+                    <button onclick="criarMatrizes()" id="buttonCriarMatrizes">Criar Matrizes</button>
+                </div>
+                <span id = "spanCriarMatriz"></span>
+            </div>
+        </div>
+        <div id="divMatrizes">
+            <div id="matriz1">
+    
+            </div>
+            
+            <div id="matriz2">
+    
+            </div>
+        </div>
+        <div id="divButton">
+            <p class="fontBold">
+                Escolha a operação:
+            </p>
+        </div>
+        <div id="divButtons">
+            <button id="buttonSomar" onclick="somarMatrizes (matriz1(), matriz2())" class ='buttonsOperacoes'>Somar</button>
+            <button id="buttonSubtrair" onclick="subtrairMatrizes(matriz1(), matriz2())" class ='buttonsOperacoes'>Subtrair</button>
+            <button id="buttonMultiplicar" onclick="multiplicarMatrizes(matriz1(), matriz2())" class ='buttonsOperacoes'>Multiplicar</button>
+        </div>
+        <div id="saidaDeDados">
+
+        </div>
+        <div id="divButtonLimpar">
+            <button id="buttonLimpar" onclick="buttonLimpar()" class ='buttonsOperacoes'>Limpar</button>
+        </div>
+        <footer>Aplicação desenvolvida com &#10084; por Érika Morais Xavier</footer>
+        <script src="matriz1.js"></script>
+    </div>
+</body>
+</html>
