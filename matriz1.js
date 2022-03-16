@@ -7,11 +7,19 @@ function criarMatrizes () {
 
     saidaDeDados.innerText = ``;
 
+    /**
+     * Alerta para preencimento de número de linhas e colunas das matrizes
+     * e criação das matrizes A e B
+     */
     if (inputNumeroDeColunas1 == 0 || inputNumeroDeLinhas1 == 0 || inputNumeroDeColunas2 == 0 || inputNumeroDeLinhas2 == 0) {
         alert (`Digite os dados das matrizes.`);
     }
     else {
 
+
+        /**
+         * CRIANDO MATRIZ A
+         *  */ 
         let matriz1 = document.getElementById('matriz1');
         matriz1.innerHTML = `<h2>Matriz A</h2>
                         <form name = 'matriz' id='matriz'>`;
@@ -22,6 +30,10 @@ function criarMatrizes () {
             }
         formulario.innerHTML += `<br>`;
         }
+
+        /**
+         * CRIANDO MATRIZ B
+         *  */ 
         let matriz2 = document.getElementById('matriz2');
 
         matriz2.innerHTML = `<h2>Matriz B</h2>
@@ -37,6 +49,10 @@ function criarMatrizes () {
     return matriz1, matriz2;
 }
 
+
+/**
+ * FUNÇÃO PARA PEGAR RESULTADOS CRIAR A MATRIZ A RESULTADO
+ */
 function matriz1 () {
 
     /**
@@ -44,80 +60,59 @@ function matriz1 () {
      */
     let inputNumeroDeLinhas = document.getElementById('inputNumeroDeLinhas1').value;
     let inputNumeroDeColunas = document.getElementById('inputNumeroDeColunas1').value;
-    let inputsDaMatriz = document.querySelectorAll(".numeroMatriz");
     let matriz = [];
     let elementosDaMatriz = [];
 
-    for (i = 0; i < inputsDaMatriz.length; i++) {
-         elementosDaMatriz.push(parseInt(document.forms['matriz'].elements[i].value));
-    }
-
-    let numerosDaMatriz = [...elementosDaMatriz];
+    /**
+     * PEGANDO OS ELEMENTOS DA MATRIZ A
+     */
+    document.querySelectorAll(".numeroMatriz").forEach (valor => {
+        elementosDaMatriz.push(parseInt(valor.value));
+    });
 
     /**
-     * Criando a MATRIZ A
+     * CRIANDO E POPULANDO MATRIZ A
      */
+
+    let d = 0;
     for (let i = 0; i < inputNumeroDeLinhas; i++) {
         matriz[i] = [];
         for (let j = 0; j < inputNumeroDeColunas; j++) {
-            matriz[i][j] = '';
-        }
-    }
-
-    /**
-     * Populando a MATRIZ A
-     */
-    let d = 0;
-    for (let l = 0; l < inputNumeroDeLinhas; l++) {
-        for (c = 0; c < inputNumeroDeColunas; c++) {
-            matriz[l][c] = numerosDaMatriz[d];
+            matriz[i][j] = elementosDaMatriz[d];
             d++;
         }
     }
+
     return matriz;
 }
 
+
+/**
+ * FUNÇÃO PARA CRIAR A MATRIZ B RESULTADO
+ */
 function matriz2 () {
     /*********************
      * MATRIZ B
      */
-         let saidaDeDados = document.getElementById('saidaDeDados');
          let inputNumeroDeLinhas2 = document.getElementById('inputNumeroDeLinhas2').value;
          let inputNumeroDeColunas2 = document.getElementById('inputNumeroDeColunas2').value;
-         let inputsDaMatriz2 = document.querySelectorAll(".numeroMatriz2");
          let matriz2 = [];
          let elementosDaMatriz2 = [];
      
-     
-         for (i = 0; i < inputsDaMatriz2.length; i++) {
-              elementosDaMatriz2.push(parseInt(document.forms['formMatriz2'].elements[i].value));
-         }
-     
-         let numerosDaMatriz2 = [...elementosDaMatriz2];
+        document.querySelectorAll(".numeroMatriz2").forEach(valor => {
+            elementosDaMatriz2.push(parseInt(valor.value));
+        });
      
          /**
-          * Criando a MATRIZ B
+          * Criando e populando a MATRIZ B
           */
-         for (let i = 0; i < inputNumeroDeLinhas2; i++) {
+        let e = 0;
+        for (let i = 0; i < inputNumeroDeLinhas2; i++) {
              matriz2[i] = [];
              for (let j = 0; j < inputNumeroDeColunas2; j++) {
-                 matriz2[i][j] = '';
+                matriz2[i][j] = elementosDaMatriz2[e];
+                e++;
              }
-         }
-     
-         /**
-          * Populando a MATRIZ B
-          */
-         let e = 0;
-         let resultado2 = '';
-         for (let l = 0; l < inputNumeroDeLinhas2; l++) {
-             resultado2 += "[ ";
-             for (c = 0; c < inputNumeroDeColunas2; c++) {
-                 matriz2[l][c] = numerosDaMatriz2[e];
-                 resultado2 += matriz2[l][c] + "\t";
-                 e++;
-             }
-             resultado2 += " ] <br>"
          }
          return matriz2;
 }
@@ -137,20 +132,13 @@ function somarMatrizes (matriz1, matriz2) {
     let saidaDeDados = document.getElementById('saidaDeDados');
     let matrizSoma = [];
 
-    /**
-     * MONTANDO A MATRIZ ADIÇÃO
-     */
-
+/**
+ * CONDICIONAL PARA EFETUAR A SOMA DE MATRIZES
+ */
     if (inputNumeroDeColunas3 == inputNumeroDeColunas31 && inputNumeroDeLinhas3 == inputNumeroDeLinhas31) {
-        for (let i = 0; i < inputNumeroDeLinhas3; i++) {
-            matrizSoma[i] = [];
-            for  (let j = 0; j < inputNumeroDeColunas3; j++) {
-                matrizSoma [i][j] = "";
-            }
-        }
-        
+
         /**
-         * POPULANDO A MATRIZ ADIÇÃO
+         * MONTANDO e POPULANDO A MATRIZ ADIÇÃO
          */
          let saidaDeDados = document.getElementById('saidaDeDados');
          saidaDeDados.innerHTML = ``;
@@ -158,6 +146,7 @@ function somarMatrizes (matriz1, matriz2) {
          saidaDeDados.innerHTML += `<form name="formularioSaida" id = "formularioSaida">`;
          let formularioSaida = document.getElementById("formularioSaida");
          for (i = 0; i <inputNumeroDeLinhas3; i++) {
+            matrizSoma[i] = [];
              for (j = 0; j < inputNumeroDeColunas3; j++) {
                 matrizSoma[i][j] = matriz1[i][j] + matriz2[i][j];
                 formularioSaida.innerHTML += `<input type='text' class = 'inputSaidaDados' value = '${matrizSoma[i][j]}' readonly>`;
@@ -176,39 +165,32 @@ function somarMatrizes (matriz1, matriz2) {
  * ****** SUBTRAÇÃO
  */
 function subtrairMatrizes (matriz1, matriz2) {
-    
-    /**
-     * MONTANDO A MATRIZ SUBTRAÇÃO
-     */
-    let inputNumeroDeLinhas5 = document.getElementById('inputNumeroDeLinhas1').value;
     let inputNumeroDeColunas5 = document.getElementById('inputNumeroDeColunas1').value;
     let inputNumeroDeLinhas51 = document.getElementById('inputNumeroDeLinhas2').value;
+    let inputNumeroDeLinhas5 = document.getElementById('inputNumeroDeLinhas1').value;
     let inputNumeroDeColunas51 = document.getElementById('inputNumeroDeColunas2').value;
-    let matrizSubtracao = [];
-    let matriz3 = [];
-
+    
     /**
-     * Criando os campos da matriz
+     * CONDICIONAL PARA REALIZAR A SUBTRAÇÃO DE MATRIZES
      */
     if (inputNumeroDeColunas5 == inputNumeroDeColunas51 && inputNumeroDeLinhas5 == inputNumeroDeLinhas51) {
-        for (i = 0; i < inputNumeroDeLinhas5; i++) {
-            matrizSubtracao[i] = [];
-            for (j = 0; j < inputNumeroDeColunas5; j++) {
-                matrizSubtracao[i][j] = "";
-            }
-        }
  
+
+        let matrizSubtracao = [];
         /**
-         * POPULANDO A MATRIZ SUBTRAÇÃO
+         * MONTANDO E POPULANDO A MATRIZ SUBTRAÇÃO
          */
+
          let saidaDeDados = document.getElementById('saidaDeDados');
          saidaDeDados.innerHTML = ``;
          saidaDeDados.innerHTML += `<h2>Resultado</h2>A - B`;
          saidaDeDados.innerHTML += `<form name="formularioSaida" id = "formularioSaida">`;
          let formularioSaida = document.getElementById("formularioSaida");
          for (i = 0; i <inputNumeroDeLinhas5; i++) {
+            matrizSubtracao[i] = [];
              for (j = 0; j < inputNumeroDeColunas51; j++) {
-                matrizSubtracao[i][j] += matriz1[i][j] + (matriz2[i][j])*-1;
+                matrizSubtracao[i][j] = matriz1[i][j] + (matriz2[i][j])*-1;
+                console.log(matrizSubtracao);
                 formularioSaida.innerHTML += `<input type='text' class = 'inputSaidaDados' value = '${matrizSubtracao [i][j]}' readonly>`;
              }
              formularioSaida.innerHTML += `<br>`
@@ -231,62 +213,27 @@ function multiplicarMatrizes (matriz1, matriz2) {
     let inputNumeroDeColunas41 = document.getElementById('inputNumeroDeColunas2').value;
     let saidaDeDados = document.getElementById('saidaDeDados');
     let matrizMultiplicacao = [];
-    let matrizMultiplicacao1 = [];
-    let matrizMultiplicacao2 = [];
-
 
     if (inputNumeroDeColunas4 == inputNumeroDeLinhas41) {
  
  /**********************
  * multiplicando os dados
  ******************** */
-        let x = 0;
-
-        for (i = 0; i < inputNumeroDeLinhas4; i++) {
-            for (j = 0; j < inputNumeroDeColunas41; j++){
-                for (k = 0; k <inputNumeroDeColunas4; k++){
-                    matrizMultiplicacao.push(matriz1[i][k] * matriz2[k][j]);
+        let somaMultiplicacao = 0;
+        // let matrizMultiplicacao = [];
+/**
+ * ALGORITMO PARA MULTIPLICAR MATRIZES
+ * O k multiplica linhas da matriz A por colunas da matriz B
+ * O somaMultiplicacao soma os valores  do for(k) para compor o número da matriz
+ */
+        for (let i = 0; i < inputNumeroDeLinhas4; i++) {
+            matrizMultiplicacao[i] = [];
+            for (let j = 0; j < inputNumeroDeColunas41; j++){
+                for (let k = 0; k <inputNumeroDeColunas4; k++){
+                    somaMultiplicacao += parseInt(matriz1[i][k] * matriz2[k][j]);
                 }
-            }
-        }
-        console.log(matrizMultiplicacao)
-
-        let arrayLength = 0;
-        let contador = 0;
-        let a = 0;
-
-        if (inputNumeroDeColunas4 != 1 && inputNumeroDeLinhas41 != 1) {
-            arrayLength = (matrizMultiplicacao.length/2);
-            for (i = 0; i < arrayLength; i++) {
-                for (j = 0; j < inputNumeroDeColunas4; j++) {
-                    contador += matrizMultiplicacao[a];
-                    a++
-                }
-                matrizMultiplicacao1.push(contador);
-                contador = 0;
-            }
-        }
-        else {
-            matrizMultiplicacao1 = [...matrizMultiplicacao];
-        }
-
-        console.log(matrizMultiplicacao1)
-
-        for (i = 0; i < inputNumeroDeLinhas4; i++) {
-            matrizMultiplicacao2[i] = [];
-            for (j = 0; j < inputNumeroDeColunas41; j++) {
-                matrizMultiplicacao2 [i][j] = "";
-            }
-        }
-        
-         /**********************
-         * populando a matriz
-         ******************** */
-        let d = 0;
-        for (i = 0; i < inputNumeroDeLinhas4; i++) {
-            for (j = 0; j < inputNumeroDeColunas41; j++) {
-                    matrizMultiplicacao2 [i][j] = matrizMultiplicacao1[d];
-                    d++
+                matrizMultiplicacao [i][j] = somaMultiplicacao;
+                somaMultiplicacao = 0;
             }
         }
 
@@ -299,7 +246,7 @@ function multiplicarMatrizes (matriz1, matriz2) {
         let formularioSaida = document.getElementById('formularioSaida');
         for (i = 0; i <inputNumeroDeLinhas4; i++) {
             for (j = 0; j < inputNumeroDeColunas41; j++) {
-                formularioSaida.innerHTML += `<input type='text' class = 'inputSaidaDados' value = '${matrizMultiplicacao2 [i][j]}' readonly>`;
+                formularioSaida.innerHTML += `<input type='text' class = 'inputSaidaDados' value = '${matrizMultiplicacao [i][j]}' readonly>`;
             }
             formularioSaida.innerHTML += `<br>`
         }
@@ -308,7 +255,7 @@ function multiplicarMatrizes (matriz1, matriz2) {
         saidaDeDados.innerHTML = `<span style = 'color: red'>Para multiplicar matrizes, o número de colunas da primeira matriz
         deve ser igual ao número de linhas da segunda matriz.</span>`;
     }
-    return matrizMultiplicacao2;
+    return matrizMultiplicacao;
 }
 
 
@@ -508,6 +455,3 @@ inputColuna2.addEventListener ('click', () => {
           inputColuna2.value = `${inputColuna21}`;
       }
   });
-
-
-
